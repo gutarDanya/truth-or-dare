@@ -1,9 +1,7 @@
-.container {
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-color: black;
-    width: 100vw;
-    height: 100vh;
-}
-
-.h {
-    color: greenyellow
+    min-height: 100vh;
 }

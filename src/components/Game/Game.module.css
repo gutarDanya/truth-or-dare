@@ -1,0 +1,46 @@
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    min-height: 100vh;
+}
+
+.choiceContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.choiceButton {
+    border: 2px solid purple;
+    border-radius: 5px;
+    background-color:greenyellow;
+    height: 30px;
+    width: 285px;
+    font-size: 20px;
+}
+
+.button {
+    border: 2px solid purple;
+    border-radius: 15px;
+    background-color: greenyellow;
+    font-size: 25px;
+    height: 30px;
+    min-width: 600px;
+}
+
+.body {
+    margin-top: 20vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.taskMessage {
+    max-width: 600px;
+    font-size: 27px;
+    font-weight: 700;
+    text-wrap: wrap;
+    text-align: center;
+    color:darkgoldenrod;
+}
