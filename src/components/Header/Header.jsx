@@ -7,9 +7,9 @@ const Header = () => {
 return (
     <header className={styles.header}>
         <nav className={styles.navigation}>
-            <Link to='/settings-play' className={styles.link}>Настройки</Link>
-            <Link to='/players'>Игркои</Link>
-            <Link to='/history-of-task'>История действий</Link>
+            <Link to='/' className={styles.link}>Настройки</Link>
+            <Link to='/players' className={styles.link}>Игркои</Link>
+            <Link to='/history-of-task' className={styles.link}>История действий</Link>
         </nav>
         <img alt='logo' src='https://chugnar.com/wp-content/uploads/2020/01/gng_tod_512.png' className={styles.logo}/>
     </header>

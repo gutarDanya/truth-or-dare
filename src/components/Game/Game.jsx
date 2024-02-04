@@ -7,18 +7,20 @@ import { createTask } from '../../services/actions/createTaskAction'
 const Game = () => {
     const dispatch = useDispatch();
 
-  const task = useSelector(state => state.createTaskReducer.taskTo)
+  const task = useSelector(state => state.createTaskReducer.taskTo);
+  const arrayOfLvl = useSelector(state => state.settingsReducer.lvls);
 
   const choiceDare = () => {
-    dispatch(createTask(dare))
+    dispatch(createTask({array: dare, lvl: arrayOfLvl}))
   }
 
   const choiceQuestion = () => {
-    dispatch(createTask(questions))
+    dispatch(createTask({array: questions, lvl: arrayOfLvl}))
   }
 
   const random = () => {
-    dispatch(createTask([...dare, ...questions]))
+    dispatch(createTask({array: [...dare, ...questions], lvl: arrayOfLvl}))
+    console.log(arrayOfLvl)
  }
 
   return (

@@ -8,7 +8,11 @@ const initalState = {
 export const createTaskReducer = (state = initalState, action) => {
     switch (action.type) {
         case CREATE_TASK: {
-            const task = action.payload[Math.floor(Math.random() * action.payload.length)].task
+            const {array, lvl} = action.payload
+            const currentArray = array.filter((tasks) => tasks.lvl === lvl.find((lvl) => lvl === tasks.lvl))
+            console.log(currentArray)
+
+            const task = currentArray[Math.floor(Math.random() * currentArray.length)].task
             return {
                 taskTo: task
             }
