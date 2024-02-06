@@ -1,5 +1,5 @@
 import { CREATE_TASK } from "../actions/createTaskAction";
-import { dare, questions } from "../testData";
+import { dare, questions } from "../../utils/testData";
 
 const initalState = {
     taskTo: ''

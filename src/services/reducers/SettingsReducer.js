@@ -1,9 +1,10 @@
 import React from "react";
-import { SELECT_LVL_OF_GAME, DELETE_LVL_OF_GAME, ADD_PLAYER_TO_GAME, DELETE_PLAYER } from "../actions/SettingsActions";
+import { SELECT_LVL_OF_GAME, DELETE_LVL_OF_GAME, ADD_PLAYER_TO_GAME, DELETE_PLAYER, GET_RANDOM_PLAYER } from "../actions/SettingsActions";
 
 const initialState = {
     lvls: [],
-    players: []
+    players: [],
+    currentPlayer: []
 }
 
 const settingsReducer = (state = initialState, action) => {
@@ -30,6 +31,13 @@ const settingsReducer = (state = initialState, action) => {
             return {
                 ...state,
                 players: state.players.filter((item) => item !== action.payload)
+            }
+        }
+        case GET_RANDOM_PLAYER: {
+            const player = Math.floor(Math.random() * state.players.length);
+            return {
+                ...state,
+                currentPlayer: state.players[player]
             }
         }
         default: return state

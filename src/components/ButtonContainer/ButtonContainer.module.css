@@ -1,0 +1,53 @@
+.containerOfButtons {
+    display: flex;
+    justify-content: space-around;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: column;
+}
+
+.buttonInactive {
+    color: yellow;
+    background-color: rgba(168, 98, 134, 1);
+    border-radius: 5px;
+    border-color: greenyellow;
+    margin-top: 20px;
+    height: 30px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.buttonActive:hover {
+    background-color: rgb(138, 45, 93);
+}
+
+.buttonInactive:hover {
+    background-color: rgba(168, 63, 118, 1);
+}
+
+.buttonActive {
+    color: yellow;
+    background-color: rgba(168, 63, 118, 1);
+    border-radius: 5px;
+    border-color: greenyellow;
+    margin-top: 20px;
+    height: 30px;
+    font-size: 26px;
+    font-weight: 700;
+}
+
+.buttonInactive:first-of-type {
+    margin-top: 0;
+}
+
+.tasksText {
+    width: 270px;
+    text-align: center;
+    margin: 25px auto 10px auto;
+    font-size: 21px;
+    line-height: 25px;
+    color: #F4A900;
+    font-weight: 700;
+}

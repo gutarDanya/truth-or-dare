@@ -1,24 +1,60 @@
 .container {
-    background-image: url(https://t3.ftcdn.net/jpg/03/23/88/08/360_F_323880864_TPsH5ropjEBo1ViILJmcFHJqsBzorxUB.jpg);
     height: 100%;
-    width: 100%;
+    width: 100vw;
     background-repeat: cover;
-    background-size:contain;
+    background-size: contain;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    font-family: 'monaSpace';
+    font-weight: 400;
+}
+
+.inputForm {
+    display: flex;
+    flex-direction: column;
+}
+
+.addPlayerText {
+    text-align: center;
+    margin: 25px auto 10px auto;
+    font-size: 30px;
+    line-height: 32px;
+    color: #F4A900;
+    font-weight: 700;
 }
 
 .input {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
     width: 270px;
+    height: 30px;
+    border-radius: 10px;
+    background-color: #87CEFA;
+    font-size: 24px;
+    text-align: center;
+}
+
+.inputFormButton {
+    color: #FDE910;
+    background-color: #77DDE7;
+    border-radius: 10px;
+    width: calc(100% - 40px);
+    margin: 20px auto 0 auto;
+    height: 30px;
+    font-size: 21px;
+    line-height: 23px;
+    font-weight: 700;
+}
+
+.inputFormButton:hover {
+    background-color: #3F888F;
 }
 
 .formContainer {
     display: flex;
     flex-direction: column;
+    height: 100%;
+    width: 100vw;
 }
 
 .containerOfButtons {
@@ -42,7 +78,12 @@
 }
 
 .tasksText {
-    color: white
+    text-align: center;
+    margin: 25px auto 10px auto;
+    font-size: 21px;
+    line-height: 25px;
+    color: #F4A900;
+    font-weight: 700;
 }
 
 .buttonInactive:hover {
@@ -74,14 +115,17 @@
 }
 
 .submitButton {
-    margin: 100px auto;
-    width: 150px;
-    height: 30px;
-    color: yellow;
-    background-color: blueviolet;
+    color: #FDE910;
+    background-color: #77DDE7;
     border-radius: 10px;
+    width: 320px;
+    margin: 50px auto auto auto;
+    height: 30px;
+    font-size: 21px;
+    line-height: 23px;
+    font-weight: 700;
 }
 
 .submitButton:hover {
-    background-color: rgb(101, 9, 187);
+    background-color: #3F888F;
 }

@@ -3,6 +3,7 @@ import styles from './MainPageSettings.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { selectLvl as selectLvlOfGame, deleteLvl, addPlayer, deletePlayer } from "../../services/actions/SettingsActions";
 import { useNavigate } from "react-router-dom";
+import ButtonContainer from "../ButtonContainer/ButtonContainer";
 
 const MainPageSettings = () => {
 
@@ -18,6 +19,7 @@ const MainPageSettings = () => {
     const clickAddPlayer = (evt) => {
         evt.preventDefault()
         dispatch(addPlayer(inputName))
+        setInputName('')
     }
 
     const selectLvl = (evt) => {
@@ -40,43 +42,24 @@ const MainPageSettings = () => {
 
     const submitTheForm = (evt) => {
         evt.preventDefault()
-        if (arrayOfSelectedLvls.length !== 0) {
+        if (arrayOfSelectedLvls.length !== 0 && players.length !== 0) {
             navigate('/game')
         }
     }
     return (
         <div className={styles.container}>
             <form className={styles.inputForm}>
-                <input type='text' className={styles.input} value={inputName} onChange={(e) => setInputName(e.target.value)}/>
-                <button type='submit' onClick={clickAddPlayer}>Добавить</button>
+                <p className={styles.addPlayerText}>Добавить Игрока</p>
+                <input placeholder="имя" type='text' className={styles.input} value={inputName} onChange={(e) => setInputName(e.target.value)}/>
+                <button className={styles.inputFormButton} type='submit' onClick={clickAddPlayer}>Добавить</button>
             </form>
             <form className={styles.formContainer}>
                 <div className={styles.containerOfButtons}>
-                    <div className={styles.buttons}>
-                        <p className={styles.tasksText}>Уровень сложности заданий</p>
-                        <button onClick={(e) => { selectLvl(e) }} className={styles.buttonInactive}>1</button>
-                        <button onClick={(e) => { selectLvl(e) }} className={styles.buttonInactive}>2</button>
-                        <button onClick={(e) => { selectLvl(e) }} className={styles.buttonInactive}>3</button>
-                        <button onClick={(e) => { selectLvl(e) }} className={styles.buttonInactive}>4</button>
-                        <button onClick={(e) => { selectLvl(e) }} className={styles.buttonInactive}>5</button>
-                    </div>
+                    <ButtonContainer title='Уровень сложности заданий' array={[1,2,3,4,5]} func={selectLvl}/>
                     
-                    <div className={styles.buttons}>
-                        <p className={styles.tasksText}>Игроки</p>
-                        {players && players.length && players.map((player, i) => {
-                            return (
-                                <button key={i} onClick={(e) => {clickDeletePlayer(e)}} className={styles.buttonInactive}>{player}</button>
-                            )
-                        })}
-                    </div>
+                    <ButtonContainer title='Игроки' array={players} func={clickDeletePlayer} />
 
-                    <div className={styles.buttons}>
-                        <p className={styles.tasksText}>Возрастной рейтинг</p>
-                        <button className={styles.buttonInactive}>6+</button>
-                        <button className={styles.buttonInactive}>12+</button>
-                        <button className={styles.buttonInactive}>16+</button>
-                        <button className={styles.buttonInactive}>18+</button>
-                    </div>
+                    <ButtonContainer title='Возрастной рейтинг' array={['6+', '12+', '16+', '18+']} />
                 </div>
 
                 <button onClick={submitTheForm} className={styles.submitButton} type="submit">Играть</button>

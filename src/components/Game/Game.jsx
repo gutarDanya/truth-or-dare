@@ -1,14 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import styles from './Game.module.css'
-import { dare, questions } from "../../services/testData";
+import { dare, questions } from "../../utils/testData";
 import { useDispatch, useSelector } from "react-redux";
 import { createTask } from '../../services/actions/createTaskAction'
+import { getRandomPlayer } from "../../services/actions/SettingsActions";
 
 const Game = () => {
     const dispatch = useDispatch();
 
   const task = useSelector(state => state.createTaskReducer.taskTo);
   const arrayOfLvl = useSelector(state => state.settingsReducer.lvls);
+  const currentPlayer = useSelector(state => state.settingsReducer.currentPlayer)
 
   const choiceDare = () => {
     dispatch(createTask({array: dare, lvl: arrayOfLvl}))
@@ -20,11 +22,16 @@ const Game = () => {
 
   const random = () => {
     dispatch(createTask({array: [...dare, ...questions], lvl: arrayOfLvl}))
-    console.log(arrayOfLvl)
+    dispatch(getRandomPlayer())
+    console.log(currentPlayer)
  }
 
+useEffect(() => {
+  dispatch(getRandomPlayer())
+}, [])
   return (
       <div className={styles.body}>
+        
         <div className={styles.choiceContainer}>
           <button onClick={choiceQuestion} className={styles.choiceButton} type='button'>Правда</button>
           <button onClick={choiceDare} className={styles.choiceButton} type='button'>действие</button>

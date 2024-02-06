@@ -3,6 +3,11 @@ export const DELETE_LVL_OF_GAME = 'DELETE_LVL_OF_GAME';
 export const SELECT_AGE_CATEGORY = 'SELECT_AGE_CATEGORY';
 export const ADD_PLAYER_TO_GAME = 'ADD_PLAYER_TO_GAME';
 export const DELETE_PLAYER = 'DELETE_PLAYER';
+export const GET_RANDOM_PLAYER = 'GET_RANDOM_PLAYER';
+
+export const getRandomPlayer = () => {
+    return {type: GET_RANDOM_PLAYER}
+}
 
 export const deletePlayer = (player) => {
     return {type: DELETE_PLAYER, payload: player}
