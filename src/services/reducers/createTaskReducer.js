@@ -1,4 +1,4 @@
-import { CREATE_TASK } from "../actions/createTaskAction";
+import { CLEAR_TASK, CREATE_TASK } from "../actions/createTaskAction";
 import { dare, questions } from "../../utils/testData";
 
 const initalState = {
@@ -15,6 +15,11 @@ export const createTaskReducer = (state = initalState, action) => {
             const task = currentArray[Math.floor(Math.random() * currentArray.length)].task
             return {
                 taskTo: task
+            }
+        }
+        case CLEAR_TASK: {
+            return {
+                taskTo: ''
             }
         }
         default: return state

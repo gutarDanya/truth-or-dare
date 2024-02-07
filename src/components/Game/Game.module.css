@@ -12,6 +12,16 @@
     margin-bottom: 20px;
 }
 
+.playerText {
+font-family: 'monaSpace';
+font-weight: 700;
+color: #F4A900;
+text-align: center;
+height: 40px;
+font-size: 35px;
+line-height: 38px;
+}
+
 .choiceButton {
     border: 2px solid purple;
     border-radius: 5px;
@@ -21,6 +31,10 @@
     font-size: 20px;
 }
 
+.choiceButton:hover {
+    background-color: rgb(140, 207, 39);
+}
+
 .button {
     border: 2px solid purple;
     border-radius: 15px;
@@ -28,6 +42,10 @@
     font-size: 25px;
     height: 30px;
     min-width: 600px;
+}
+
+.button:hover {
+    background-color: rgb(140, 207, 39)
 }
 
 .body {

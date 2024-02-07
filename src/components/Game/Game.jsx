@@ -4,13 +4,16 @@ import { dare, questions } from "../../utils/testData";
 import { useDispatch, useSelector } from "react-redux";
 import { createTask } from '../../services/actions/createTaskAction'
 import { getRandomPlayer } from "../../services/actions/SettingsActions";
+import { clearTask } from "../../services/actions/createTaskAction"
+
+//Сделать элемент кнопки универсальным
 
 const Game = () => {
     const dispatch = useDispatch();
 
   const task = useSelector(state => state.createTaskReducer.taskTo);
   const arrayOfLvl = useSelector(state => state.settingsReducer.lvls);
-  const currentPlayer = useSelector(state => state.settingsReducer.currentPlayer)
+  const currentPlayer = useSelector(state => state.settingsReducer.currentPlayer);
 
   const choiceDare = () => {
     dispatch(createTask({array: dare, lvl: arrayOfLvl}))
@@ -23,23 +26,35 @@ const Game = () => {
   const random = () => {
     dispatch(createTask({array: [...dare, ...questions], lvl: arrayOfLvl}))
     dispatch(getRandomPlayer())
-    console.log(currentPlayer)
+ }
+
+ const nextPlayer = () => {
+  dispatch(clearTask())
  }
 
 useEffect(() => {
   dispatch(getRandomPlayer())
 }, [])
-  return (
+
+  if (!task) {
+    return (
       <div className={styles.body}>
-        
-        <div className={styles.choiceContainer}>
+      <p className={styles.playerText}>{currentPlayer}</p>
+      <div className={styles.choiceContainer}>
           <button onClick={choiceQuestion} className={styles.choiceButton} type='button'>Правда</button>
           <button onClick={choiceDare} className={styles.choiceButton} type='button'>действие</button>
         </div>
         <button onClick={random} className={styles.button} type='button'>Получить правду или действие</button>
-          <p className={styles.taskMessage}>{task}</p>
       </div>
-  );
+    )
+  } else {
+    return (
+      <div className={styles.body}>
+        <p className={styles.taskMessage}>{task}</p>
+        <button className={styles.button} type='button' onClick={nextPlayer}>Следующий игрок</button>
+      </div>
+    )
+  }
 }
 
 export default Game

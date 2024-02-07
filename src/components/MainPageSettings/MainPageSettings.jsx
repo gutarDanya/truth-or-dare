@@ -9,6 +9,7 @@ const MainPageSettings = () => {
 
     const navigate = useNavigate();
 
+    //there input value of add players
     const [inputName, setInputName] = useState('');
 
     const dispatch = useDispatch();
@@ -16,12 +17,14 @@ const MainPageSettings = () => {
 
     const players = useSelector(state => state.settingsReducer.players);
 
+    //function of add player in game
     const clickAddPlayer = (evt) => {
         evt.preventDefault()
         dispatch(addPlayer(inputName))
         setInputName('')
     }
 
+    //function of select lvl: custiomize button after click & dispatch lvls of game to store
     const selectLvl = (evt) => {
         evt.preventDefault()
         const number = Number(evt.target.innerText);
@@ -35,17 +38,20 @@ const MainPageSettings = () => {
         }
     }
 
+    //function remove player from game & change style of button
     const clickDeletePlayer = (evt) => {
         evt.preventDefault();
         dispatch(deletePlayer(evt.target.innerText))
     }
 
+    //confirm all settings. There if no players and levels are selected Function does not allow the player to enter the Game route
     const submitTheForm = (evt) => {
         evt.preventDefault()
         if (arrayOfSelectedLvls.length !== 0 && players.length !== 0) {
             navigate('/game')
         }
     }
+
     return (
         <div className={styles.container}>
             <form className={styles.inputForm}>
@@ -55,11 +61,13 @@ const MainPageSettings = () => {
             </form>
             <form className={styles.formContainer}>
                 <div className={styles.containerOfButtons}>
+                    
                     <ButtonContainer title='Уровень сложности заданий' array={[1,2,3,4,5]} func={selectLvl}/>
                     
                     <ButtonContainer title='Игроки' array={players} func={clickDeletePlayer} />
 
                     <ButtonContainer title='Возрастной рейтинг' array={['6+', '12+', '16+', '18+']} />
+
                 </div>
 
                 <button onClick={submitTheForm} className={styles.submitButton} type="submit">Играть</button>
