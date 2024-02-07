@@ -11,7 +11,7 @@ function App() {
     <div className={styles.root}>
       <Header/>
       <Routes>
-        <Route path='/' element={<MainPageSettings/>}/>
+        <Route path='/truth-or-dare' element={<MainPageSettings/>}/>
         <Route path='/game' element={<Game />} />
       </Routes>
     </div>

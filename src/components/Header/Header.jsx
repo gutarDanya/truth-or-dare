@@ -7,7 +7,7 @@ const Header = () => {
 return (
     <header className={styles.header}>
         <nav className={styles.navigation}>
-            <Link to='/' className={styles.link}>Настройки</Link>
+            <Link to='/truth-or-dare' className={styles.link}>Настройки</Link>
             <Link to='/players' className={styles.link}>Игркои</Link>
             <Link to='/history-of-task' className={styles.link}>История действий</Link>
         </nav>
