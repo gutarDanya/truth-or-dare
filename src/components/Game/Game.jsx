@@ -50,7 +50,8 @@ useEffect(() => {
   } else {
     return (
       <div className={styles.body}>
-        <p className={styles.taskMessage}>{task}</p>
+        <p className={styles.taskMessage}>{task.task}</p>
+        <p className={styles.author}>автор: {task.author}</p>
         <button className={styles.button} type='button' onClick={nextPlayer}>Следующий игрок</button>
       </div>
     )

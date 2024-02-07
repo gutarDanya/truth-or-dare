@@ -54,6 +54,16 @@ line-height: 38px;
     flex-direction: column;
 }
 
+.author {
+    width: 200px;
+    font-size:17px;
+    margin: 20px 30px 20px auto;
+    font-weight: 700;
+    line-height: 20px;
+    color: rgb(133, 3, 133);
+    text-align: right;
+}
+
 .taskMessage {
     max-width: 600px;
     font-size: 27px;
@@ -61,4 +71,5 @@ line-height: 38px;
     text-wrap: wrap;
     text-align: center;
     color:darkgoldenrod;
+    margin: 0;
 }

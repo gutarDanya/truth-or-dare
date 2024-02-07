@@ -12,7 +12,7 @@ export const createTaskReducer = (state = initalState, action) => {
             const currentArray = array.filter((tasks) => tasks.lvl === lvl.find((lvl) => lvl === tasks.lvl))
             console.log(currentArray)
 
-            const task = currentArray[Math.floor(Math.random() * currentArray.length)].task
+            const task = currentArray[Math.floor(Math.random() * currentArray.length)]
             return {
                 taskTo: task
             }
