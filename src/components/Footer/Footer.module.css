@@ -35,6 +35,10 @@
     color: #f90;
 }
 
+.link:hover {
+    color: rgb(248, 176, 67);
+}
+
 
 .author {
     margin: 20px auto 10px 10px;

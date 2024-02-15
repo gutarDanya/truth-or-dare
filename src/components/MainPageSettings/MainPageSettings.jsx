@@ -51,12 +51,21 @@ const MainPageSettings = () => {
             navigate('/game')
         }
     }
+//IN FUTURE FIX CLICK ON THE CIRCLE
+    const activeRandomMode =(evt) => {
+        if(evt.target.classList.length === 1 ) {
+            evt.target.className = `${evt.target.className} ${styles.randomActive}`
+        } else {
+            evt.target.className = styles.randomInactive
+        }
+        console.log(evt)
+    }
 
     return (
         <div className={styles.container}>
             <h1 className={styles.header}>Настройки</h1>
             <form className={styles.inputForm}>
-                <p className={styles.addPlayerText}>Добавить Игрока</p>
+                <h2 className={styles.addPlayerText}>Добавить Игрока</h2>
                 <input placeholder="имя" type='text' className={styles.input} value={inputName} onChange={(e) => setInputName(e.target.value)}/>
                 <button className={styles.inputFormButton} type='submit' onClick={clickAddPlayer}>Добавить</button>
             </form>
@@ -70,6 +79,10 @@ const MainPageSettings = () => {
                     <ButtonContainer title='Возрастной рейтинг' array={['6+', '12+', '16+', '18+']} />
 
                 </div>
+                <h2 className={styles.addPlayerText}>Включить случайный режим</h2>
+                <button className={styles.randomInactive} onClick={e => activeRandomMode(e)} type='button'>
+                    <div className={styles.circle} onClick={e => e.stopPropagation()}/>
+                </button>
 
                 <button onClick={submitTheForm} className={styles.submitButton} type="submit">Играть</button>
             </form>
