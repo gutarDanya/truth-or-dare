@@ -3,22 +3,22 @@
     font-weight: 700;
     display: flex;
     justify-content: space-between;
-    background-color:  #98FB98;
-    border-bottom: 2px solid #006633;
+    background-color:  #0e0e0e;
+    border-bottom: 2px solid #f90;
     align-items:center;
-    width: calc(100vw - 60px);
+    width: calc(100% - 60px);
     padding: 10px 30px;
 }
 
 .link {
     text-decoration: none;
-    color: rgb(66,170,255);
+    color: white;
     font-size: 24px;
     margin-right: 30px;
 }
 
 .link:hover {
-    color: rgb(0,49,83)
+    color: #f90
 }
 
 .logo {

@@ -1,6 +1,6 @@
 .container {
     height: 100%;
-    width: 100vw;
+    width: 100%;
     background-repeat: cover;
     background-size: contain;
     display: flex;
@@ -9,6 +9,12 @@
     align-items: center;
     font-family: 'monaSpace';
     font-weight: 400;
+}
+
+.header {
+    margin: 40px 0 30px;
+    color: white;
+    font-size: 40px;
 }
 
 .inputForm {
@@ -29,14 +35,16 @@
     width: 270px;
     height: 30px;
     border-radius: 10px;
-    background-color: #87CEFA;
+    background-color: #252525;
     font-size: 24px;
     text-align: center;
+    border-radius: 18px;
+    border: 0;
 }
 
 .inputFormButton {
     color: #FDE910;
-    background-color: #77DDE7;
+    background-color: #151515;
     border-radius: 10px;
     width: calc(100% - 40px);
     margin: 20px auto 0 auto;
@@ -44,10 +52,11 @@
     font-size: 21px;
     line-height: 23px;
     font-weight: 700;
+    border: 0;
 }
 
 .inputFormButton:hover {
-    background-color: #3F888F;
+    background-color: #252525;
 }
 
 .formContainer {
@@ -67,13 +76,14 @@
 
 .buttonInactive {
     color: yellow;
-    background-color: rgba(168, 98, 134, 1);
+    background-color: #252525;
     border-radius: 5px;
-    border-color: greenyellow;
+    border-color: #f90;
     margin-top: 20px;
     height: 30px;
     font-size: 26px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .buttonInactive:first-of-type {
@@ -90,14 +100,16 @@
 }
 
 .buttonInactive:hover {
-    background-color: rgba(168, 63, 118, 1);
+    color: #161616;
+    background-color: #f90;
 }
 
+
 .buttonActive {
-    color: yellow;
-    background-color: rgba(168, 63, 118, 1);
+    cursor: pointer;
+    color: #161616;
+    background-color: #f90;
     border-radius: 5px;
-    border-color: greenyellow;
     margin-top: 20px;
     height: 30px;
     font-size: 26px;
@@ -109,7 +121,8 @@
 }
 
 .buttonActive:hover {
-    background-color: rgb(138, 45, 93);
+    background-color: #161616;
+    color: #f90
 }
 
 .buttons {
@@ -119,8 +132,9 @@
 
 .submitButton {
     color: #FDE910;
-    background-color: #77DDE7;
+    background-color: #151515;
     border-radius: 10px;
+    border: 0;
     width: 320px;
     margin: 50px auto auto auto;
     height: 30px;
@@ -130,5 +144,5 @@
 }
 
 .submitButton:hover {
-    background-color: #3F888F;
+    background-color: #252525;
 }

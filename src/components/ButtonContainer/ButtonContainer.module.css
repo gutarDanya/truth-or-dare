@@ -10,28 +10,31 @@
 
 .buttonInactive {
     color: yellow;
-    background-color: rgba(168, 98, 134, 1);
+    background-color: #252525;
     border-radius: 5px;
-    border-color: greenyellow;
+    border-color: #f90;
     margin-top: 20px;
     height: 30px;
     font-size: 26px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .buttonActive:hover {
-    background-color: rgb(138, 45, 93);
+    background-color: #161616;
+    color: #f90
 }
 
 .buttonInactive:hover {
-    background-color: rgba(168, 63, 118, 1);
+    color: #161616;
+    background-color: #f90;
 }
 
 .buttonActive {
-    color: yellow;
-    background-color: rgba(168, 63, 118, 1);
+    cursor: pointer;
+    color: #161616;
+    background-color: #f90;
     border-radius: 5px;
-    border-color: greenyellow;
     margin-top: 20px;
     height: 30px;
     font-size: 26px;

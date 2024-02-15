@@ -54,6 +54,7 @@ const MainPageSettings = () => {
 
     return (
         <div className={styles.container}>
+            <h1 className={styles.header}>Настройки</h1>
             <form className={styles.inputForm}>
                 <p className={styles.addPlayerText}>Добавить Игрока</p>
                 <input placeholder="имя" type='text' className={styles.input} value={inputName} onChange={(e) => setInputName(e.target.value)}/>

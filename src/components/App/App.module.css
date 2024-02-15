@@ -20,8 +20,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    background-color: #D0F0C0;
-    height: 100vh;
+    background-color: black;
+    min-height: 100vh;
     font-family: 'monaSpace', sans-serif, Arial;
     overflow-y: hidden;
 }

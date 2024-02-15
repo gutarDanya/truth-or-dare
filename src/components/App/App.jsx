@@ -4,6 +4,7 @@ import Game from '../Game/Game';
 import Header from '../Header/Header';
 import { Routes,Route } from 'react-router-dom';
 import MainPageSettings from '../MainPageSettings/MainPageSettings';
+import Footer from '../Footer/Footer';
 
 function App() {
 
@@ -14,6 +15,7 @@ function App() {
         <Route path='/truth-or-dare' element={<MainPageSettings/>}/>
         <Route path='/game' element={<Game />} />
       </Routes>
+      <Footer/>
     </div>
   );
 }
