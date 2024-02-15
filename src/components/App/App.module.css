@@ -21,7 +21,8 @@
     flex-direction: column;
     align-items: center;
     background-color: black;
-    min-height: 100vh;
+    max-height: 100vw;
     font-family: 'monaSpace', sans-serif, Arial;
     overflow-y: hidden;
+    padding: 0;
 }

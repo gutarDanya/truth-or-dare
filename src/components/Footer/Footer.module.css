@@ -1,6 +1,42 @@
 .footer {
+    display: flex;
+    flex-direction: column;
     margin-top: 70px;
     min-height: 200px;
     background-color: #0e0e0e;
     width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.columnContaienr {
+    display: flex;
+    flex-direction: row;
+    width: 80%;
+    justify-content: space-around;
+}
+
+.column {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    max-width: 300px;
+}
+
+.columnHeader {
+    color: #969696;
+    text-wrap: wrap;
+}
+
+.link {
+    text-align: center;
+    text-decoration: none;
+    color: #f90;
+}
+
+
+.author {
+    margin: 20px auto 10px 10px;
+    color: white
 }
