@@ -3,7 +3,17 @@ export const DELETE_LVL_OF_GAME = 'DELETE_LVL_OF_GAME';
 export const SELECT_AGE_CATEGORY = 'SELECT_AGE_CATEGORY';
 export const ADD_PLAYER_TO_GAME = 'ADD_PLAYER_TO_GAME';
 export const DELETE_PLAYER = 'DELETE_PLAYER';
+export const HANDLE_RANDOM_MODE = 'HANDLE_RANDOM_MODE';
 export const GET_RANDOM_PLAYER = 'GET_RANDOM_PLAYER';
+export const GET_NEXT_PLAYER = 'GET_NEXT_PLAYER'
+
+export const handleRandomMode = () => {
+    return {type: HANDLE_RANDOM_MODE}
+}
+
+export const getNextPlayer = () => {
+    return {type: GET_NEXT_PLAYER}
+}
 
 export const getRandomPlayer = () => {
     return {type: GET_RANDOM_PLAYER}

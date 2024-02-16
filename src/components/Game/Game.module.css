@@ -6,6 +6,13 @@
     min-height: 100vh;
 }
 
+.headerText {
+    color: white;
+    text-align: center;
+    margin: 30px auto 40px;
+    font-size:40px;
+}
+
 .choiceContainer {
     display: flex;
     justify-content: space-between;
@@ -23,29 +30,35 @@ line-height: 38px;
 }
 
 .choiceButton {
-    border: 2px solid purple;
-    border-radius: 5px;
-    background-color:greenyellow;
-    height: 30px;
+    border: 2px solid #212121;
+    border-radius: 20px;
+    background-color:#151515;
+    height: 40px;
     width: 285px;
-    font-size: 20px;
+    font-size: 15px;
+    color: white;
+    transition: background-color 200ms ease-in-out;
+    font-weight: 700;
 }
 
 .choiceButton:hover {
-    background-color: rgb(140, 207, 39);
+    background-color: #252525;
 }
 
 .button {
-    border: 2px solid purple;
-    border-radius: 15px;
-    background-color: greenyellow;
-    font-size: 25px;
-    height: 30px;
+    font-weight: 700;
+    color: white;
+    border: 2px solid #212121;
+    border-radius: 20px;
+    background-color: #151515;
+    font-size: 15px;
+    height: 40px;
     min-width: 600px;
+    transition: background-color 200ms ease-in-out;
 }
 
 .button:hover {
-    background-color: rgb(140, 207, 39)
+    background-color: #252525;
 }
 
 .body {
@@ -60,16 +73,16 @@ line-height: 38px;
     margin: 20px 30px 20px auto;
     font-weight: 700;
     line-height: 20px;
-    color: rgb(133, 3, 133);
+    color: #969696;
     text-align: right;
 }
 
 .taskMessage {
+    margin: 35px 0;
     max-width: 600px;
     font-size: 27px;
     font-weight: 700;
     text-wrap: wrap;
     text-align: center;
     color:darkgoldenrod;
-    margin: 0;
 }

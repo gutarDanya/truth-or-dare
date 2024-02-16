@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import styles from './MainPageSettings.module.css';
 import { useDispatch, useSelector } from "react-redux";
-import { selectLvl as selectLvlOfGame, deleteLvl, addPlayer, deletePlayer } from "../../services/actions/SettingsActions";
+import { selectLvl as selectLvlOfGame, deleteLvl, addPlayer, deletePlayer, handleRandomMode } from "../../services/actions/SettingsActions";
 import { useNavigate } from "react-router-dom";
 import ButtonContainer from "../ButtonContainer/ButtonContainer";
 
@@ -58,7 +58,7 @@ const MainPageSettings = () => {
         } else {
             evt.target.className = styles.randomInactive
         }
-        console.log(evt)
+        dispatch(handleRandomMode())
     }
 
     return (

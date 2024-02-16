@@ -40,6 +40,7 @@
     text-align: center;
     border-radius: 18px;
     border: 0;
+    color: white;
 }
 
 .inputFormButton {
@@ -53,6 +54,7 @@
     line-height: 23px;
     font-weight: 700;
     border: 0;
+    cursor: pointer;
 }
 
 .inputFormButton:hover {
@@ -84,6 +86,7 @@
     font-size: 26px;
     font-weight: 700;
     cursor: pointer;
+    transition: background-color 200ms linear;
 }
 
 .buttonInactive:first-of-type {
@@ -114,6 +117,7 @@
     height: 30px;
     font-size: 26px;
     font-weight: 700;
+    transition: background-color 200ms linear;
 }
 
 .buttonActive:first-of-type {
@@ -139,6 +143,7 @@
     background-color: #424242;
     padding: 5px 60px 5px 10px;
     transition: all 250ms ease-in-out;
+    cursor: pointer;
 }
 
 .randomActive {
@@ -165,6 +170,7 @@
     font-size: 21px;
     line-height: 23px;
     font-weight: 700;
+    cursor: pointer;
 }
 
 .submitButton:hover {
