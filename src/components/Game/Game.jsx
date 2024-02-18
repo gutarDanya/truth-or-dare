@@ -9,50 +9,51 @@ import { clearTask } from "../../services/actions/createTaskAction"
 //Сделать элемент кнопки универсальным
 
 const Game = () => {
-    const dispatch = useDispatch();
+
+  const dispatch = useDispatch();
 
   const task = useSelector(state => state.createTaskReducer.taskTo);
-  const arrayOfLvl = useSelector(state => state.settingsReducer.lvls);
+  const arrayOfLvl = localStorage.getItem('lvls').split(',').map((lvl) => {return Number(lvl)});
   const currentPlayer = useSelector(state => state.settingsReducer.currentPlayer);
   const randomActive = useSelector(state => state.settingsReducer.randomActive);
 
- const getPlayer = () => {
+  const getPlayer = () => {
     if (randomActive) {
-        dispatch(getRandomPlayer())
+      dispatch(getRandomPlayer())
     } else {
-        dispatch(getNextPlayer())
+      dispatch(getNextPlayer())
     }
-}
+  }
 
   const choiceDare = () => {
-    dispatch(createTask({array: dare, lvl: arrayOfLvl}))
+    dispatch(createTask(dare))
     getPlayer()
   }
 
   const choiceQuestion = () => {
-    dispatch(createTask({array: questions, lvl: arrayOfLvl}))
+    dispatch(createTask(questions))
     getPlayer()
   }
 
   const random = () => {
-    dispatch(createTask({array: [...dare, ...questions], lvl: arrayOfLvl}))
+    dispatch(createTask([...dare, ...questions]))
     getPlayer()
- }
+  }
 
- const nextPlayer = () => {
-  dispatch(clearTask())
- }
+  const nextPlayer = () => {
+    dispatch(clearTask())
+  }
 
-useEffect(() => {
-  dispatch(getRandomPlayer())
-}, [])
+  useEffect(() => {
+    dispatch(getRandomPlayer())
+  }, [])
 
   if (!task) {
     return (
       <div className={styles.body}>
         <h1 className={styles.headerText}>Выберете правду или действие</h1>
-      <p className={styles.playerText}>{currentPlayer}</p>
-      <div className={styles.choiceContainer}>
+        <p className={styles.playerText}>{currentPlayer}</p>
+        <div className={styles.choiceContainer}>
           <button onClick={choiceQuestion} className={styles.choiceButton} type='button'>Правда</button>
           <button onClick={choiceDare} className={styles.choiceButton} type='button'>действие</button>
         </div>

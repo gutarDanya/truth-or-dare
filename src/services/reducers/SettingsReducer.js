@@ -2,38 +2,51 @@ import React from "react";
 import { SELECT_LVL_OF_GAME, DELETE_LVL_OF_GAME, ADD_PLAYER_TO_GAME, DELETE_PLAYER, GET_RANDOM_PLAYER, HANDLE_RANDOM_MODE, GET_NEXT_PLAYER } from "../actions/SettingsActions";
 
 const initialState = {
-    lvls: [3, 4, 5],
-    players:[],
     currentPlayer: '',
     randomActive: false,
 }
 
 const settingsReducer = (state = initialState, action) => {
     switch (action.type) {
+
+        //FIX localstorage have null in arr
         case SELECT_LVL_OF_GAME: {
-            return {
-                ...state,
-                lvls: [...state.lvls, action.payload]
+
+            console.log(localStorage.getItem('lvls'))
+
+            if (localStorage.getItem('lvls') === '') {
+                localStorage.setItem('lvls', action.payload)
+            } else {
+                localStorage.setItem('lvls', localStorage.getItem('lvls') + `,${action.payload}`)
             }
+
+            return state
         }
+
         case DELETE_LVL_OF_GAME: {
-            return {
-                ...state,
-                lvls: state.lvls.filter((item) => item !== action.payload)
-            }
+            localStorage.setItem('lvls', localStorage.getItem('lvls').split(',').filter((lvl) => {return lvl !== JSON.stringify(action.payload)}))
+            return state
         }
+
         case ADD_PLAYER_TO_GAME: {
-            return {
-                ...state,
-                players: [...state.players, action.payload]
+
+            console.log(localStorage.getItem('players'))
+
+            if (localStorage.getItem('players') === '') {
+                localStorage.setItem('players', action.payload)
+            } else {
+                localStorage.setItem('players', localStorage.getItem('players') + `,${action.payload}`)
             }
+
+            return state
         }
+
         case DELETE_PLAYER: {
-            return {
-                ...state,
-                players: state.players.filter((item) => item !== action.payload)
-            }
+            localStorage.setItem('players', localStorage.getItem('players').split(',').filter((player) => {return player !== action.payload}))
+
+            return state
         }
+
         case HANDLE_RANDOM_MODE: {
             return {
                 ...state,
@@ -42,7 +55,9 @@ const settingsReducer = (state = initialState, action) => {
         }
         case GET_RANDOM_PLAYER: {
 
-            const player = state.players[Math.floor(Math.floor & state.players.length)]
+            const players = localStorage.getItem('players').split(',')
+
+            const player = players[Math.floor(Math.floor & players.length)]
 
             return {
                 ...state,
@@ -51,13 +66,16 @@ const settingsReducer = (state = initialState, action) => {
         }
         case GET_NEXT_PLAYER: {
 
+            const players = localStorage.getItem('players').split(',')
+
             let player = 'Даниил';
 
-            if (state.players.indexOf(state.currentPlayer) == state.players.length - 1) {
-                player = state.players[0]
+            if (players.indexOf(state.currentPlayer) == players.length - 1) {
+                player = players[0]
             } else {
-                player = state.players[state.players.indexOf(state.currentPlayer) + 1]
+                player = players[players.indexOf(state.currentPlayer) + 1]
             }
+            
             return {
                 ...state,
                 currentPlayer: player

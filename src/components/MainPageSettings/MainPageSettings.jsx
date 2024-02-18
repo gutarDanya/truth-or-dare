@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import styles from './MainPageSettings.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { selectLvl as selectLvlOfGame, deleteLvl, addPlayer, deletePlayer, handleRandomMode } from "../../services/actions/SettingsActions";
@@ -13,9 +13,9 @@ const MainPageSettings = () => {
     const [inputName, setInputName] = useState('');
 
     const dispatch = useDispatch();
-    const arrayOfSelectedLvls = useSelector((state) => state.settingsReducer.lvls);
+    const arrayOfSelectedLvls = localStorage.getItem('lvls').split(',').map((lvl) => {return Number(lvl)});
 
-    const players = useSelector(state => state.settingsReducer.players);
+    const players = localStorage.getItem('players').split(',');
 
     //function of add player in game
     const clickAddPlayer = (evt) => {
@@ -47,8 +47,13 @@ const MainPageSettings = () => {
     //confirm all settings. There if no players and levels are selected Function does not allow the player to enter the Game route
     const submitTheForm = (evt) => {
         evt.preventDefault()
-        if (arrayOfSelectedLvls.length !== 0 && players.length !== 0) {
+        if (localStorage.getItem('lvls') != 0 && localStorage.getItem('lvls').split(',').map((item) => {return Number(item)}) !== 0 
+        && localStorage.getItem('players') !== '' && localStorage.getItem('players').split(',') !== 0) {
             navigate('/game')
+
+            console.log(localStorage.getItem('lvls'))
+
+            console.log(localStorage.getItem('lvls').split(',').map((item) => {return Number(item)}), localStorage.getItem('players').split(','))
         }
     }
 //IN FUTURE FIX CLICK ON THE CIRCLE
@@ -60,6 +65,10 @@ const MainPageSettings = () => {
         }
         dispatch(handleRandomMode())
     }
+    
+    useEffect(() => {
+        
+    })
 
     return (
         <div className={styles.container}>
@@ -74,7 +83,7 @@ const MainPageSettings = () => {
                     
                     <ButtonContainer title='Уровень сложности заданий' array={[1,2,3,4,5]} func={selectLvl}/>
                     
-                    <ButtonContainer title='Игроки' array={players} func={clickDeletePlayer} />
+                    <ButtonContainer title='Игроки' array={localStorage.getItem('players').split(',')} func={clickDeletePlayer} />
 
                     <ButtonContainer title='Возрастной рейтинг' array={['6+', '12+', '16+', '18+']} />
 

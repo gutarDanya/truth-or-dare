@@ -8,6 +8,14 @@ import Footer from '../Footer/Footer';
 
 function App() {
 
+  if (!localStorage.getItem('lvls')) {
+    localStorage.setItem('lvls', '')
+  }
+
+  if (!localStorage.getItem('players')) {
+    localStorage.setItem('players', '')
+  }
+
   return (
     <div className={styles.root}>
       <Header/>
