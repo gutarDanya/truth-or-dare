@@ -4,3 +4,6 @@
 
 1. В терминале введите в нужной вам дериктории
 2. утсановите необходимые пакеты такие как: Redux, React-router-dom, а так же React, redux-thunk
+
+
+# [ссылка на gh-pages](http://gutarDanya.github.io/truth-or-dare)

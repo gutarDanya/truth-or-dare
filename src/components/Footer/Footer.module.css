@@ -7,6 +7,7 @@
     width: 100%;
     justify-content: center;
     align-items: center;
+    margin-top: 100px;
 }
 
 .columnContaienr {
@@ -43,4 +44,29 @@
 .author {
     margin: 20px auto 10px 10px;
     color: white
+}
+
+@media (max-width: 520px) {
+    .columnContaienr {
+        width: 100%;
+    }
+}
+
+@media (max-width: 400px) {
+    .columnContaienr {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .columnHeader {
+        margin: 0;
+    }
+
+    .column:first-of-type {
+        margin-top: 30px;
+    }
+
+    .column {
+        margin-top: 20px;
+    };
 }
