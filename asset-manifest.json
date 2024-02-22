@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/truth-or-dare/static/css/main.e0fae165.css",
-    "main.js": "/truth-or-dare/static/js/main.263b4b86.js",
+    "main.css": "/truth-or-dare/static/css/main.b9b5fbef.css",
+    "main.js": "/truth-or-dare/static/js/main.de26d18a.js",
     "static/js/787.d4aba7ab.chunk.js": "/truth-or-dare/static/js/787.d4aba7ab.chunk.js",
     "static/media/MonaspaceXenon-MediumItalic.otf": "/truth-or-dare/static/media/MonaspaceXenon-MediumItalic.4119f4ec0274cf62edae.otf",
     "static/media/MonaspaceXenon-Regular.otf": "/truth-or-dare/static/media/MonaspaceXenon-Regular.e5f283f8c9478d356d66.otf",
     "static/media/MonaspaceXenon-Bold.otf": "/truth-or-dare/static/media/MonaspaceXenon-Bold.2fbee67f04604de568b6.otf",
     "index.html": "/truth-or-dare/index.html",
-    "main.e0fae165.css.map": "/truth-or-dare/static/css/main.e0fae165.css.map",
-    "main.263b4b86.js.map": "/truth-or-dare/static/js/main.263b4b86.js.map",
+    "main.b9b5fbef.css.map": "/truth-or-dare/static/css/main.b9b5fbef.css.map",
+    "main.de26d18a.js.map": "/truth-or-dare/static/js/main.de26d18a.js.map",
     "787.d4aba7ab.chunk.js.map": "/truth-or-dare/static/js/787.d4aba7ab.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.e0fae165.css",
-    "static/js/main.263b4b86.js"
+    "static/css/main.b9b5fbef.css",
+    "static/js/main.de26d18a.js"
   ]
 }
