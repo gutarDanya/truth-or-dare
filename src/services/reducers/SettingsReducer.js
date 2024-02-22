@@ -24,7 +24,7 @@ const settingsReducer = (state = initialState, action) => {
         }
 
         case DELETE_LVL_OF_GAME: {
-            localStorage.setItem('lvls', localStorage.getItem('lvls').split(',').filter((lvl) => {return lvl !== action.payload}))
+            localStorage.setItem('lvls', localStorage.getItem('lvls').split(',').filter((lvl) => {return Number(lvl) !== Number(action.payload)}))
             return state
         }
 
