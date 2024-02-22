@@ -1,0 +1,21 @@
+.container {
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    width: 80%;
+    justify-self: center;
+}
+
+.columns {
+    width: 100%;
+    display: flex;
+    margin: 40px auto 100px auto;
+    justify-content: space-around;
+}
+
+.headerText {
+    color: white;
+    text-align: center;
+    font-size: 40px;
+    margin: 110px auto 70px;
+}

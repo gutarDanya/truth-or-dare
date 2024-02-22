@@ -1,0 +1,42 @@
+.container {
+    display: grid;
+    row-gap: 15px;
+    flex-direction: column;
+    width: 100%;
+}
+
+.button {
+    display: flex;
+    width: 100%;
+    min-height: 40px;
+    border-radius: 15px;
+    justify-content: center;
+    border: 0;
+    background-color: #151515;
+    color: white;
+}
+
+.button:hover {
+    background-color: #252525;
+}
+
+.text {
+    text-align: center;
+    color: white;
+    font-size: 15px;
+}
+
+.headerText {
+    border: 0;
+    background-color: #151515;
+    color: #F4A900;
+    text-align: center;
+    height: 50px;
+    min-width: 200px;
+    margin: 40px auto 40px auto;
+    border-radius: 25px;
+}
+
+.headerText:hover {
+    background-color: #252525;
+}

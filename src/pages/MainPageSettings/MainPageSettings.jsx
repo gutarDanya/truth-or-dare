@@ -3,7 +3,7 @@ import styles from './MainPageSettings.module.css';
 import { useDispatch, useSelector } from "react-redux";
 import { selectLvl as selectLvlOfGame, deleteLvl, addPlayer, deletePlayer, handleRandomMode } from "../../services/actions/SettingsActions";
 import { useNavigate } from "react-router-dom";
-import ButtonContainer from "../ButtonContainer/ButtonContainer";
+import ButtonContainer from "../../components/ButtonContainer/ButtonContainer";
 
 const MainPageSettings = () => {
 
