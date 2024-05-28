@@ -57,7 +57,7 @@ const Game = () => {
           <button onClick={choiceQuestion} className={styles.choiceButton} type='button'>Правда</button>
           <button onClick={choiceDare} className={styles.choiceButton} type='button'>действие</button>
         </div>
-        <button onClick={random} className={styles.button} type='button'>Получить правду или действие</button>
+        <button onClick={random} className={styles.button} type='button'>Случайно</button>
       </div>
     )
   } else {

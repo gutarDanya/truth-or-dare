@@ -22,8 +22,8 @@ function App() {
       <Header/>
       <Routes>
         <Route path='/truth-or-dare' element={<MainPageSettings/>}/>
-        <Route path='/game' element={<Game />} />
-        <Route path='/players' element={<Players />} />
+        <Route path='/truth-or-dare/game' element={<Game />} />
+        <Route path='/truth-or-dare/players' element={<Players />} />
       </Routes>
       <Footer/>
     </div>

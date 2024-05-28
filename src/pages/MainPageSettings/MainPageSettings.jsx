@@ -49,7 +49,7 @@ const MainPageSettings = () => {
         evt.preventDefault()
         if (localStorage.getItem('lvls') != 0 && localStorage.getItem('lvls').split(',').map((item) => {return Number(item)}) !== 0 
         && localStorage.getItem('players') !== '' && localStorage.getItem('players').split(',') !== 0) {
-            navigate('/game')
+            navigate('/truth-or-dare/game')
 
             console.log(localStorage.getItem('lvls'))
 

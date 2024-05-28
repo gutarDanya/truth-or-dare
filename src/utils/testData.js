@@ -375,9 +375,27 @@ export const questions = [
         author: 'Luxuria',
         limitation: '18+'
     },
+    {
+        task: 'бывал ли секс по-пьяни, на который не рассчитывал(а)',
+        lvl: 4,
+        author: 'Ларчик',
+        limitation: '18+'
+    },
+    {
+        task: 'Танцевал \ -вала стриптиз для любимого?',
+        lvl: 4,
+        author: 'Ларчик',
+        limitation: '18+'
+    },
 ]
 
 export const dare = [
+    {
+        task: 'понюхать подмышку соседа на твоё усмотрение',
+        lvl: 3,
+        author: 'Ларчик',
+        limitation: '16+'
+    },
     {
         task: 'Расскажи анекдо',
         lvl: 1,
